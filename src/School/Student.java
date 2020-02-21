@@ -10,12 +10,27 @@ public class Student {
     private Grade grade;
     private String name;
     private int alder;
+    private double averageGrade;
 
     public Student(String name, int alder) {
         this.grades = new ArrayList<>();
         addGrades();
         this.name = name;
         this.alder = alder;
+        this.averageGrade = calulateAverage();
+    }
+
+
+
+
+
+
+    public double getAverageGrade() {
+        return averageGrade;
+    }
+
+    public void setAverageGrade(int averageGrade) {
+        this.averageGrade = averageGrade;
     }
 
     public void printGrades() {
@@ -33,6 +48,19 @@ public class Student {
 
             grades.add(grade);
         }
+    }
+    public int calculateAverageGrades(){
+         int sum = 0;
+        for (Grade g: grades) {
+            sum += g.getScore();
+        }
+
+        return sum / 6;
+    }
+    public double calulateAverage(){
+        return grades.stream()
+                .mapToInt(i -> i.getScore())
+                .average().getAsDouble();
     }
 
     public List<Grade> getGrades() {

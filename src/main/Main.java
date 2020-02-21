@@ -12,14 +12,19 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        ClassList classList = new ClassList("A");
+        ClassList classList = new ClassList("A"); //generates class
         ClassList classList1 = new ClassList("B");
         generateStudents(classList);
         generateStudents(classList1);
+        classList.calculateGradeAvgForClass();
+        System.out.println( classList.getAvgGrades());
+        classList1.calculateGradeAvgForClass();
         School school = new School("Uia");
         school.classLists.add(classList);
         school.classLists.add(classList1);
         school.printAllStudentsAndGrades();
+        System.out.println(classList1.getAvgGrades());
+        System.out.println(classList.getAvgGrades());
 
 
     }

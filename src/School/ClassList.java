@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassList {
-
     private String name;
     private int numOfStudents;
     private List<Student> studentList;
+    private double avgGrades;
 
     public ClassList(String name) {
         this.name = name;
@@ -28,6 +28,23 @@ public class ClassList {
         studentList.add(student);
         numOfStudents += 1;
 
+    }
+
+    public double calculateGradeAvgForClass() {
+        int sum = 0;
+        for (Student s : studentList) {
+            sum += s.getAverageGrade();
+        }
+        this.avgGrades = sum / (studentList.size() +1);
+        return avgGrades;
+    }
+
+    public double getAvgGrades() {
+        return avgGrades;
+    }
+
+    public void setAvgGrades(double avgGrades) {
+        this.avgGrades = avgGrades;
     }
 
     public String getName() {
