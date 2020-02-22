@@ -31,12 +31,10 @@ public class ClassList {
     }
 
     public double calculateGradeAvgForClass() {
-        int sum = 0;
-        for (Student s : studentList) {
-            sum += s.getAverageGrade();
-        }
-        this.avgGrades = sum / (studentList.size() +1);
-        return avgGrades;
+        return this.avgGrades = studentList.stream()
+                .mapToDouble(i -> i.getAverageGrade())
+                .average().getAsDouble();
+
     }
 
     public double getAvgGrades() {
