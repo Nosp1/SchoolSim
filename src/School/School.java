@@ -6,6 +6,7 @@ import java.util.List;
 public class School {
     public ArrayList<ClassList> classLists;
     public String name;
+    private double avgSchoolGrade;
 
     public School(String name) {
         this.classLists = new ArrayList<ClassList>();
@@ -26,6 +27,19 @@ public class School {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double calculateAvgSchoolGrades(){
+        return this.classLists.stream()
+                .mapToDouble(i -> i.getAvgGrades())
+                .average().getAsDouble();
+    }
+    public double calcAvgWithFor() {
+        this.avgSchoolGrade = 0;
+        for (ClassList cl : classLists) {
+            avgSchoolGrade += cl.getAvgGrades();
+        }
+        return avgSchoolGrade;
     }
 
     public void printAllStudentsAndGrades() {

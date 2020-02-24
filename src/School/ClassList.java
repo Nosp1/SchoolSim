@@ -13,6 +13,7 @@ public class ClassList {
         this.name = name;
         studentList = new ArrayList<>();
         this.numOfStudents = 0;
+        this.avgGrades = 0;
     }
 
     private int countNumbersOfStudent() {
@@ -27,6 +28,9 @@ public class ClassList {
     public void addStudentToList(Student student) {
         studentList.add(student);
         numOfStudents += 1;
+
+    }
+    public void getSpecificStudent(int studentID) {
 
     }
 
