@@ -1,14 +1,17 @@
 package School;
 
+import Handlers.IdGenerator;
 import Handlers.RandomGen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Student {
     private List<Grade> grades;
     private Grade grade;
     private String name;
+    private int studID;
     private int alder;
     private double averageGrade;
 
@@ -18,12 +21,16 @@ public class Student {
         this.name = name;
         this.alder = alder;
         this.averageGrade = calulateAverage();
+        this.studID = IdGenerator.idSequence.getAndIncrement();
     }
 
+    public int getStudID() {
+        return studID;
+    }
 
-
-
-
+    public void setStudID(int studID) {
+        this.studID = studID;
+    }
 
     public double getAverageGrade() {
         return averageGrade;

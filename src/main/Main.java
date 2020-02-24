@@ -25,6 +25,9 @@ public class Main {
         school.printAllStudentsAndGrades();
         System.out.println(classList1.getAvgGrades());
         System.out.println(classList.getAvgGrades());
+        for (Student e : classList.getStudentList()) {
+            System.out.println("e.getStudID() = " + e.getStudID());
+        }
 
 
     }
