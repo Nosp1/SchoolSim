@@ -28,6 +28,7 @@ public class Main {
         for (Student e : classList.getStudentList()) {
             System.out.println("e.getStudID() = " + e.getStudID());
         }
+        classList.getSpecificStudent(19);
 
 
     }
