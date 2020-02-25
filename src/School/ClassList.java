@@ -1,7 +1,9 @@
 package School;
 
-import java.util.ArrayList;
-import java.util.List;
+import Handlers.IdGenerator;
+
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class ClassList {
     private String name;
@@ -30,9 +32,21 @@ public class ClassList {
         numOfStudents += 1;
 
     }
-    public void getSpecificStudent(int studentID) {
 
+    public void getSpecificStudent(int studentID) {
+        int temp = IdGenerator.idSequence.get();
+        if (studentID <= IdGenerator.idSequence.get()) {
+            int s = IntStream.range(0, studentList.size())
+                    .filter(userInd -> studentList.get(userInd).getStudID() == studentID)
+                    .findFirst().getAsInt();
+            Student v = studentList.get(s);
+            System.out.println(v.getName());
+        } else {
+            System.out.println("There is no student with the id " + studentID);
+
+        }
     }
+
 
     public double calculateGradeAvgForClass() {
         return this.avgGrades = studentList.stream()
