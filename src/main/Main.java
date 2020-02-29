@@ -4,34 +4,39 @@ import Handlers.RandomGen;
 import School.ClassList;
 import School.School;
 import School.Student;
+import School.Grade;
+import School.SchoolsLocation;
+import School.Location;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
         ClassList classList = new ClassList("A"); //generates class
         ClassList classList1 = new ClassList("B");
-        generateStudents(classList);
+        generateStudents(classList); //generates random students
         generateStudents(classList1);
-        classList.calculateGradeAvgForClass();
-        System.out.println( classList.getAvgGrades());
-        classList1.calculateGradeAvgForClass();
+
         School school = new School("Uia");
         school.classLists.add(classList);
         school.classLists.add(classList1);
         school.printAllStudentsAndGrades();
-        System.out.println(classList1.getAvgGrades());
-        System.out.println(classList.getAvgGrades());
-        for (Student e : classList.getStudentList()) {
-            System.out.println("e.getStudID() = " + e.getStudID());
-        }
-        classList.getSpecificStudent(19);
+        SchoolsLocation schoolsLocation = new SchoolsLocation();
+        schoolsLocation.addlocation(school, new Location("Norway",RandomGen.getRandomCity()));
 
+        for (Student e : classList.getStudentList()) {
+            System.out.println("Id for: " + e.getName() + " is " + e.getStudID());
+        }
+        classList.getSpecificStudent(8);
+        classList.printAvgGradeForClass();
+        classList1.printAvgGradeForClass();
 
     }
+
 
     private static void generateStudents(ClassList classList) {
         for (int g = 0; g < RandomGen.getRandomNumOfStudents(); g++) {

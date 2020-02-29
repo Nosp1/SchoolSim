@@ -1,19 +1,27 @@
 package School;
 
-import java.util.HashMap;
-
 public class Location {
-    private HashMap<School,Location> schoolLocationMap;
+    private String city;
+    private String country;
+    public Location(String country, String city) {
+        this.city = city;
+        this.country = country;
 
-    public Location(HashMap<School, Location> schoolLocationMap) {
-        this.schoolLocationMap = schoolLocationMap;
     }
 
-    public HashMap<School, Location> getSchoolLocationMap() {
-        return schoolLocationMap;
+    public String getCity() {
+        return city;
     }
 
-    public void setSchoolLocationMap(HashMap<School, Location> schoolLocationMap) {
-        this.schoolLocationMap = schoolLocationMap;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

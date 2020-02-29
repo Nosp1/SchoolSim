@@ -5,6 +5,10 @@ import Handlers.IdGenerator;
 import java.util.*;
 import java.util.stream.IntStream;
 
+
+/**
+ *
+ */
 public class ClassList {
     private String name;
     private int numOfStudents;
@@ -18,6 +22,9 @@ public class ClassList {
         this.avgGrades = 0;
     }
 
+    /**
+     * @return numofStudents - this the number of students.
+     */
     private int countNumbersOfStudent() {
         int x = 0;
         for (Student ignored : studentList) {
@@ -27,6 +34,9 @@ public class ClassList {
         return numOfStudents;
     }
 
+    /**
+     * @param student - takes an instance of a student.
+     */
     public void addStudentToList(Student student) {
         studentList.add(student);
         numOfStudents += 1;
@@ -34,7 +44,6 @@ public class ClassList {
     }
 
     public void getSpecificStudent(int studentID) {
-        int temp = IdGenerator.idSequence.get();
         if (studentID <= IdGenerator.idSequence.get()) {
             int s = IntStream.range(0, studentList.size())
                     .filter(userInd -> studentList.get(userInd).getStudID() == studentID)
@@ -47,6 +56,19 @@ public class ClassList {
         }
     }
 
+    public void printSortedGrades() {
+        for (Student s : studentList) {
+            s.getGradesSorted();
+            for (Grade i : s.getGrades()) {
+                System.out.println(i.getScore());
+            }
+        }
+    }
+
+    public void printAvgGradeForClass() {
+        calculateGradeAvgForClass();
+        System.out.println(avgGrades);
+    }
 
     public double calculateGradeAvgForClass() {
         return this.avgGrades = studentList.stream()
