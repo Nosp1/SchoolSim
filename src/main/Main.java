@@ -4,13 +4,10 @@ import Handlers.RandomGen;
 import School.ClassList;
 import School.School;
 import School.Student;
-import School.Grade;
+
 import School.SchoolsLocation;
 import School.Location;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
 
 
 public class Main {

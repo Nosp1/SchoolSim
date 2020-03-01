@@ -13,6 +13,10 @@ public class SchoolsLocation {
         schoolLocationMap.put(school,location);
     }
 
+    public void findLocation(School school){
+        schoolLocationMap.get(school);
+    }
+
     public HashMap<School, Location> getSchoolLocationMap() {
         return schoolLocationMap;
     }
