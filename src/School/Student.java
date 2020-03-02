@@ -4,6 +4,7 @@ import Handlers.IdGenerator;
 import Handlers.RandomGen;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -41,6 +42,7 @@ public class Student {
     }
 
     public void printGrades() {
+        getGradesSorted();
         System.out.println("Grades: ");
         for (Grade grade : grades) {
             System.out.println(grade.getSubject() + ": " + grade.getScore());
@@ -92,5 +94,11 @@ public class Student {
 
     public void setAlder(int alder) {
         this.alder = alder;
+    }
+
+    public List<Grade> getGradesSorted() {
+         grades.sort(Comparator.comparing(Grade::getScore));
+
+        return grades;
     }
 }
