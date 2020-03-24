@@ -33,17 +33,12 @@ public class Main {
         classList.printAvgGradeForClass();
         classList1.printAvgGradeForClass();
 
-
-
-     
-        
         Teacher teacher = new Teacher(RandomGen.getRandomName(), RandomGen.getRandomAge());
         System.out.println(teacher.getAlder());
         for (String  e : teacher.getCourseList()) {
             System.out.println(e);
 
         }
-
     }
 
 
