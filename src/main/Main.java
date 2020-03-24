@@ -19,7 +19,7 @@ public class Main {
         generateStudents(classList1);
 
         School school = new School("Uia");
-        school.classLists.add(classList);
+        classList.add(classList);
         school.classLists.add(classList1);
         school.printAllStudentsAndGrades();
         SchoolsLocation schoolsLocation = new SchoolsLocation();
@@ -32,6 +32,31 @@ public class Main {
         classList.printAvgGradeForClass();
         classList1.printAvgGradeForClass();
 
+
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
+        System.out.println("yo");
     }
 
 
