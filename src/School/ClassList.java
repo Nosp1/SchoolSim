@@ -14,6 +14,7 @@ public class ClassList {
     private int numOfStudents;
     private List<Student> studentList;
     private double avgGrades;
+    private Teacher teacher;
 
     public ClassList(String name) {
         this.name = name;

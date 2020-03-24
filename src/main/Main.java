@@ -4,10 +4,11 @@ import Handlers.RandomGen;
 import School.ClassList;
 import School.School;
 import School.Student;
-
+import School.Teacher;
 import School.SchoolsLocation;
 import School.Location;
 
+import java.util.List;
 
 
 public class Main {
@@ -33,30 +34,16 @@ public class Main {
         classList1.printAvgGradeForClass();
 
 
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
-        System.out.println("yo");
+
+     
+        
+        Teacher teacher = new Teacher(RandomGen.getRandomName(), RandomGen.getRandomAge());
+        System.out.println(teacher.getAlder());
+        for (String  e : teacher.getCourseList()) {
+            System.out.println(e);
+
+        }
+
     }
 
 
@@ -65,6 +52,8 @@ public class Main {
             classList.addStudentToList(new Student(RandomGen.getRandomName(), RandomGen.getRandomAge()));
         }
     }
+
+
 
 
 }
