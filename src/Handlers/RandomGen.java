@@ -1,12 +1,16 @@
 package Handlers;
 
+import School.Student;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomGen {
-    private static Random random = new Random();
+    private static final Random random = new Random();
     public static final String[] Subjects = {"Norwegian", "Math", "History", "English", "Sports", "Geography"};
     public static final String[] names = {"Per", "Ola", "Kari", "Mari", "Lisa", "Kristan", "Jon", "Martin", "Bjørnar", "Hilde"};
     public static final String[] city = {"Kristiansand", "Grimstad", "Arendal", "Bø"};
+    public static final int x = 5;
 
 
     public static int getRandomNum() {
@@ -30,6 +34,12 @@ public class RandomGen {
         int c = random.nextInt(4);
         return city[c];
     }
+    public static void main(String[] args) {
+       Student student = new Student(RandomGen.getRandomName(),RandomGen.getRandomAge());
+      double pi = Math.PI;
+       int y = 5;
+       pi = y;
 
+    }
 
 }
