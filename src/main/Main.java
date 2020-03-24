@@ -20,7 +20,7 @@ public class Main {
         generateStudents(classList1);
 
         School school = new School("Uia");
-        school.classLists.add(classList);
+        classList.add(classList);
         school.classLists.add(classList1);
         school.printAllStudentsAndGrades();
         SchoolsLocation schoolsLocation = new SchoolsLocation();
@@ -33,13 +33,13 @@ public class Main {
         classList.printAvgGradeForClass();
         classList1.printAvgGradeForClass();
 
+
         Teacher teacher = new Teacher(RandomGen.getRandomName(), RandomGen.getRandomAge());
         System.out.println(teacher.getAlder());
         for (String  e : teacher.getCourseList()) {
             System.out.println(e);
 
         }
-
     }
 
 
